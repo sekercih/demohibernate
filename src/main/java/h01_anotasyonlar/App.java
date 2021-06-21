@@ -1,4 +1,4 @@
-package com.hibernate.demohibernate;
+package h01_anotasyonlar;
 
 /**
  * Hello world!
