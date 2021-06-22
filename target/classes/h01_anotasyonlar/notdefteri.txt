@@ -1,0 +1,8 @@
+
+-none - Herhangi bir işlem yapılmaz. Şema oluşturulmayacak.
+-create-only - Veritabanı şeması oluşturulacaktır.
+-drop - Veritabanı şeması bırakılacak.
+-create - Veritabanı şeması bırakılacak ve daha sonra oluşturulacaktır.
+-create-drop - Veritabanı şeması bırakılacak ve daha sonra oluşturulacaktır. SessionFactory kapatıldığında, veritabanı şeması bırakılacaktır.
+-validate - Veritabanı şeması, varlık eşlemeleri kullanılarak doğrulanacaktır.
+-update - Veritabanı şeması, mevcut veritabanı şeması varlık eşlemeleriyle karşılaştırılarak güncellenecektir.

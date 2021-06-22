@@ -9,6 +9,7 @@ public static void main(String[] args) {
 	// Tabloya eklenecek verilerin olusuturulmasi
 	H1_Ogrenci ogr1 = new H1_Ogrenci(101, "Canan Yilmaz", 90);
 	H1_Ogrenci ogr2 = new H1_Ogrenci(102, "Ilık Su Ozturk", 75);
+	H1_Ogrenci ogr10 = new H1_Ogrenci(110, "Sami Ozturk", 99);
 	// - Veritabanı baglanti ayarlarinin yapilmasi (hibernate.cfg.xml) 
 	//   ve tabloyu olusturacak class'in gosterilmesi
 	Configuration con = new Configuration().
@@ -23,6 +24,7 @@ public static void main(String[] args) {
 	// Veritabanina verilerin kaydedilmesi 
 	session.save(ogr1);
 	session.save(ogr2);
+	session.save(ogr10);
 	// Yukarida yapilan islemlerin veritabanina kalici olarak iletilmesi.
 	tx.commit();
 	session.close();
