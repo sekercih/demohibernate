@@ -30,8 +30,15 @@ public class H3_Save {
 		H1_Ogrenci ogr2 = new H1_Ogrenci(102, "Ilık Su Ozturk", 75, ders2);
 	
 		// Veritabanina verilerin kaydedilmesi
-		session.save(ogr1);
-		session.save(ogr2);
+		//session.save(ogr1);
+		//session.save(ogr2);
+		
+		H1_Ogrenci ogrenci01=session.get(H1_Ogrenci.class,101);
+		H1_Ogrenci ogrenci02=session.get(H1_Ogrenci.class,102);
+		System.out.println(ogrenci01);
+		System.out.println(ogrenci01);
+		
+		
 
 		// Yukarida yapilan islemlerin veritabanina kalici olarak iletilmesi.
 		tx.commit();
