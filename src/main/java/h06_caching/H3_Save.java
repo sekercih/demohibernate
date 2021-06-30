@@ -4,6 +4,25 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 public class H3_Save {
+	/*
+	 Transient Object: Eğer bir nesne Javada  oluşturulup henüz herhangi bir Hibernate session'ı 
+	 ile ilişkilnedirilmez ise bu nesnelere Transient nesne denilir.  
+	      ÖRNEĞİN: Constructor ile POJO nesnesini oluşturup session.save() ile kaydetmez isek       
+	*/
+	/*
+	 Persistent Object: Eğer oluşturulan bir nesne, bir session ile ilişkilendirilir ise 
+	 bu nesneye "Persistent Object" denilir. 
+	 ORNEGIN: session.save() 
+	*/
+	/*
+	 Detached Object: Eğer nesneler ile ilişkili bir session kapatılırsa bu nesnelere "Detached Object" denilir.
+	*/
+	/*
+	 Removed Object: Eğer bir kaydı veritabanından siler isek ( delete(),remove() veya Query ile)
+	                 bu nesneye "Removed Object- Silinmiş Nesne" denilir. 
+	                 Not: Silinmiş nesneler Java'da hala var olurken veritabanından silinler.
+	                 Not: Garbage Collector Transient, Detached kaldırabilir. 
+	*/
 	public static void main(String[] args) {
 		Configuration con = new Configuration().configure("hibernate.cfg.xml")
 				.addAnnotatedClass(H1_Ogrenci.class)
@@ -19,11 +38,9 @@ public class H3_Save {
 		H1_Ogrenci o1 = new H1_Ogrenci(111,"Ayse Ozturk", 99);
 		o1.getKitapListesi().add(k1);
 		o1.getKitapListesi().add(k2);
-		o1.setKitapListesi(o1.getKitapListesi());
 		H1_Ogrenci o2 = new H1_Ogrenci(222,"Can Yilmaz", 88);
 		o2.getKitapListesi().add(k3);
 		o2.getKitapListesi().add(k4);
-		o2.setKitapListesi(o2.getKitapListesi());
 		H1_Ogrenci o3 = new H1_Ogrenci(333,"Berk Yatmaz", 90);
 		// Kitaplara sahip atanmasi
 		k1.setOgrenci(o1);
